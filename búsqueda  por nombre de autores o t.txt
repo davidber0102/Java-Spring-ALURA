@@ -1,0 +1,23 @@
+búsqueda  por nombre de autores o títulos de libros
+espacio = %20
+https://gutendex.com/books?search=dickens%20great
+
+
+
+búsqueda por frase calve en la estanterías o temas del libro
+https://gutendex.com/books?topic=children
+
+
+búsqueda por idioma
+https://gutendex.com/books?languages=es
+
+
+búsqueda por derechos de autor
+https://gutendex.com/books?copyright=true
+
+
+búsqueda por año 
+https://gutendex.com/books?author_year_start=1800&author_year_end=1899
+
+búsqueda por año e idioma
+https://gutendex.com/books?author_year_start=1950&languages=en
