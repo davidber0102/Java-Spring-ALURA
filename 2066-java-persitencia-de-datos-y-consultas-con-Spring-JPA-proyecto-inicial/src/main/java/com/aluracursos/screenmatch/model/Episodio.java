@@ -1,7 +1,6 @@
 package com.aluracursos.screenmatch.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
@@ -25,6 +24,7 @@ public class Episodio {
         this.temporada = numero;
         this.titulo = d.titulo();
         this.numeroEpisodio = d.numeroEpisodio();
+
         try{
             this.evaluacion = Double.valueOf(d.evaluacion());
         }catch (NumberFormatException e){
@@ -42,45 +42,26 @@ public class Episodio {
 
     public void setSerie(Serie serie) {this.serie = serie;    }
 
-    public Integer getTemporada() {
-        return temporada;
-    }
+    public Integer getTemporada() {return temporada;}
 
-    public void setTemporada(Integer temporada) {
-        this.temporada = temporada;
-    }
+    public void setTemporada(Integer temporada) {this.temporada = temporada;}
 
-    public String getTitulo() {
-        return titulo;
-    }
+    public String getTitulo() {return titulo;}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+    public void setTitulo(String titulo) {this.titulo = titulo;}
 
-    public Integer getNumeroEpisodio() {
-        return numeroEpisodio;
-    }
+    public Integer getNumeroEpisodio() {return numeroEpisodio;}
 
-    public void setNumeroEpisodio(Integer numeroEpisodio) {
-        this.numeroEpisodio = numeroEpisodio;
-    }
+    public void setNumeroEpisodio(Integer numeroEpisodio) {this.numeroEpisodio = numeroEpisodio;}
 
-    public Double getEvaluacion() {
-        return evaluacion;
-    }
+    public Double getEvaluacion() {return evaluacion;}
 
-    public void setEvaluacion(Double evaluacion) {
-        this.evaluacion = evaluacion;
-    }
+    public void setEvaluacion(Double evaluacion) {this.evaluacion = evaluacion;}
 
-    public LocalDate getFechaDeLanzamiento() {
-        return fechaDeLanzamiento;
-    }
+    public LocalDate getFechaDeLanzamiento() {return fechaDeLanzamiento;}
 
     public void setFechaDeLanzamiento(LocalDate fechaDeLanzamiento) {
-        this.fechaDeLanzamiento = fechaDeLanzamiento;
-    }
+        this.fechaDeLanzamiento = fechaDeLanzamiento;}
 
     @Override
     public String toString() {

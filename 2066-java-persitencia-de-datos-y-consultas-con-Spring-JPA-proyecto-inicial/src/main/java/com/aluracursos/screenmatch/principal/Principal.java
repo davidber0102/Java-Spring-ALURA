@@ -86,7 +86,14 @@ public class Principal {
         var json = consumoApi.obtenerDatos(URL_BASE + nombreSerie.replace(" ", "+") + API_KEY);
         System.out.println(json);
         DatosSerie datos = conversor.obtenerDatos(json, DatosSerie.class);
-        return datos;
+        return datos;    }
+
+    private void buscarSerieWeb() {
+        DatosSerie datos = getDatosSerie();
+        //datosSerie.add(datos);
+        Serie serie = new Serie(datos);
+        repositorio.save(serie);
+        System.out.println(datos);
     }
     private void buscarEpisodioPorSerie() {
         //DatosSerie datosSerie = getDatosSerie();
@@ -116,13 +123,6 @@ public class Principal {
             serieEmcontrada.setEpisodios(episodos);
             repositorio.save(serieEmcontrada);
         }
-    }
-    private void buscarSerieWeb() {
-        DatosSerie datos = getDatosSerie();
-        //datosSerie.add(datos);
-        Serie serie = new Serie(datos);
-        repositorio.save(serie);
-        System.out.println(datos);
     }
 
     private void mostrarSerieBuscadas() {
@@ -192,7 +192,6 @@ public class Principal {
             List<Episodio> topEpisodios = repositorio.top5Episodios(serrie);
             topEpisodios.forEach(e -> System.out.printf("Serie: %s - Temporada %s - Episodio %s - Evaluacion %s",
                     e.getSerie(), e.getTemporada(), e.getTitulo(), e.getEvaluacion()));
-
         }
     }
 }
